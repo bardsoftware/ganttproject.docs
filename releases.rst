@@ -2,6 +2,8 @@
 GanttProject Release History
 ****************************
 
+This history starts from GanttProject 2.8. You can find `previous history <http://www.ganttproject.biz/about>`_ on the main web site.
+
 .. _release_2.8:
 
 GanttProject 2.8 Pilsen
@@ -44,7 +46,7 @@ If your project is fine and the scheduler has made no changes, you'll see no rep
 a couple of seconds after file has been opened and you need to inspect the changes made by the scheduler.
 
 Other changes
-----------
+---------------------------
 
 There is a number of other `important bugfixes <https://github.com/bardsoftware/ganttproject/milestones/2.8>`_ in GanttProject 2.8.
 Korean translation has been significantly improved thanks to the efforts of `anonymous translator ihavnoth <https://crowdin.com/profile/ihavnoth>`_,
