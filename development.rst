@@ -82,3 +82,30 @@ pane in IDEA, find task ``runApp`` in ``ganttproject-builder/build.gradle`` file
 right-click and choose ``Run`` or ``Debug``.
 
 .. image:: img/development/idea-run-ganttproject.png
+
+Building and running from Eclipse
+---------------------------------
+
+The instructions below were tested with the latest Eclipse 4.6.2 aka Neon.2 and assume
+that Gradle integration is set up properly (e.g. you have set paths to your local Gradle distribution)
+Your mileage may vary.
+
+1. Generate Eclipse projects using ``gradle eclipse`` command executed in ``ganttproject-builder``. It generates
+``.project`` and other files in each project's directory.
+2. Use ``Import.Existing projects`` in Eclipse to import the generated projects into the
+workspace.
+
+.. image:: img/development/eclipse-import-projects.png
+
+3. You may need to ignore JavaFX API restriction for ``ganttproject`` project.
+
+.. image:: img/development/eclipse-ignore-api-restriction.png
+
+When import is completed and all projects have been built successfully, you can run
+GanttProject using Gradle's runApp task wrapped into Eclipse run configuration.
+
+1. Right-click on ``ganttproject-builder/build.gradle`` and choose ``Run As``.
+2. In the run configurations dialog choose Gradle and click "New configuration" button.
+3. Specify ``runApp`` as task name, ``ganttproject-builder`` as working dir.
+
+.. image:: img/development/eclipse-run-ganttproject.png
