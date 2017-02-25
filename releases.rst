@@ -12,6 +12,9 @@ GanttProject 2.8 Pilsen
 GanttProject 2.8 "Pilsen" is an evolution of the previous `GanttProject 2.7 "Ostrava" <http://ganttproject.biz/ostrava>`_. It makes working
 :ref:`Early Begin constraint <scheduler_earliest_begin>`  in the scheduler and fixes a number of bugs and usability issues.
 
+**Maintenance updates**: `GanttProject 2.8.1 <https://github.com/bardsoftware/ganttproject/releases/tag/ganttproject-2.8.1>`_ 
+and `GanttProject 2.8.2 <https://github.com/bardsoftware/ganttproject/releases/tag/ganttproject-2.8.2>`_
+
 Headlines
 ---------
 

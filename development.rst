@@ -92,6 +92,7 @@ Your mileage may vary.
 
 1. Generate Eclipse projects using ``gradle eclipse`` command executed in ``ganttproject-builder``. It generates
 ``.project`` and other files in each project's directory.
+
 2. Use import wizard ``Existing projects`` from ``Import`` menu in Eclipse to import the generated projects into the
 workspace.
 
