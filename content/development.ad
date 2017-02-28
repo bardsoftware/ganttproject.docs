@@ -1,0 +1,144 @@
++++
+title = "GanttProject Developer Guide"
+draft = false
+markup = "asciidoc"
+aliases = [
+  "/development.html"
+]
++++
+
+This page provides instruction for building GanttProject 2.8 or
+GanttProject HEAD from the source code.
+
+The instructions assume that you're using Ubuntu-based Linux distribution.
+The process on other distros and Windows/Mac OSX should be similar,
+modulo differences in packages/paths and the way command line terminal works.
+
+## Prerequisites
+
+A bare minimum which you need is:
+
+1. http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java SE Development Kit](JDK)
+version 8 from Oracle or http://openjdk.java.net[OpenJDK]. You also need http://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm[JavaFX]
+It is bundled with Oracle's JDK, but if you're using OpenJDK then you need to install JavaFX separately. It is
+available as `openjfx` in Ubuntu repositories.
+
+2. http://gradle.org[Gradle] build tool for most of the development tasks.
+If you're going to build DEB package or Mac OSX app you'll also need http://ant.apache.org[ANT].
+
+3. https://git-scm.com[Git] version control to checkout the sources.
+
+Please make sure that you can run ``java``, ``javac``, ``git`` and ``gradle`` commands.
+
+## Checking out the sources
+
+The source code is stored in http://github.com/bardsoftware/ganttproject[GitHub repository].
+You can clone the repository using
+
+....
+    git clone https://github.com/bardsoftware/ganttproject.git
+....
+
+We also publish self-sufficient archives with the sources of the stable versions.
+The latest published is https://github.com/bardsoftware/ganttproject/archive/ganttproject-2.8.2.zip[GanttProject 2.8.2]
+
+The rest of this page assumes that you checked out the sources using one of the ways into `/tmp/ganttproject` directory.
+
+## Branches
+GanttProject 2.8 code sits in a branch named `BRANCH_2_8_X`.
+Having cloned the repository, you can switch to that branch with `git checkout BRANCH_2_8_X`.
+
+
+## Building with Gradle
+
+If everything is OK with your environment then the following will build
+a binary distribution of GanttProject:
+
+....
+    cd /tmp/ganttproject/ganttproject-builder
+    gradle distBin
+....
+
+The distribution is assembled in  `ganttproject-builder/dist-bin` directory. You can
+run GanttProject using `ganttproject` or `ganttproject.bat` script::
+
+....
+    cd /tmp/ganttproject/ganttproject-builder/dist-bin
+    ./ganttproject
+....
+
+You can also start GanttProject using `gradle runApp` which will build a distro and launch
+GanttProject as necessary.
+
+Basically, that's everything that you need to be able to change the sources using any text editor,
+ build and run the changed code.
+
+## Building and running from IntelliJ IDEA
+
+
+The instructions below apply to https://www.jetbrains.com/idea/[IntelliJ IDEA]
+but other popular IDEs can also be used in a similar way.
+
+
+IDEA https://www.jetbrains.com/help/idea/2016.3/gradle.html[supports Gradle] out of the box.
+You can just import GanttProject with `File.New.Project from Existing Sources` menu action in IDEA
+where you need to choose `ganttproject-builder/build.gradle` file. When asked about the modules,
+uncheck module `..` as shown on the screenshot below
+
+image::/img/development/idea-gradle-import.png[]
+
+Having completed the import, you can run GanttProject using Gradle's runApp task. Open Gradle
+pane in IDEA, find task `runApp` in `ganttproject-builder/build.gradle` file,
+right-click and choose `Run` or `Debug`.
+
+image::/img/development/idea-run-ganttproject.png[]
+
+## Building and running from Eclipse
+
+The instructions below were tested with the latest Eclipse 4.6.2 aka Neon.2 and assume
+that Gradle integration is set up properly (e.g. you have set paths to your local Gradle distribution)
+Your mileage may vary.
+
+. Generate Eclipse projects using `gradle eclipse` command executed in `ganttproject-builder`. It generates
+`.project` and other files in each project's directory.
+
+. Use import wizard `Existing projects` from `Import` menu in Eclipse to import the generated projects into the
+workspace.
++
+image::/img/development/eclipse-import-wizard.png[]
++
+Choose the root folder `/tmp/ganttproject` and check `Search for nested projects`.
+Uncheck the root project `..(/tmp/ganttproject)`
++
+image::/img/development/eclipse-import-projects.png[]
+
+. You may need to ignore JavaFX API restriction for `ganttproject` project.
++
+image::/img/development/eclipse-ignore-api-restriction.png[]
+
+When import is completed and all projects have been built successfully, you can run
+GanttProject using Gradle's runApp task wrapped into Eclipse run configuration.
+
+. Right-click on `ganttproject-builder/build.gradle` and choose `Run As`.
+. In the run configurations dialog choose Gradle and click _New configuration_ button.
+. Specify `runApp` as task name, `ganttproject-builder` as working dir.
++
+image::/img/development/eclipse-run-ganttproject.png[]
+
+## Debugging from Eclipse
+
+To be able to debug GanttProject you need to start it in debug mode and attach to
+the debug port from Eclipse
+
+. Run `gradle debugApp` in `ganttproject-builder` folder. Java Machine will start and immediately
+stop waiting until debugger attaches to port 9009
+. Create new Debug Configuration in Eclipse (e.g. by right-clicking `ganttproject-builder/build.gradle`
+and choosing `Debug As`). Specify port `9009` and optionally check `Allow termination` checkbox.
++
+image::/img/development/eclipse-debug-ganttproject.png[]
+. Now when you run this debug configuration, Eclipse will try to connect to port localhost:9009 and
+GanttProject which is waiting the connection will resume.
+. You may want to add some sources to the debug configuration so that Eclipse could
+map info from the debugged application to the source code.
++
+image::/img/development/eclipse-debug-sources.png[]

@@ -1,0 +1,62 @@
+baseurl = "https://docs.ganttproject.biz"
+languageCode = "en-us"
+title = "GanttProject Docs"
+theme = "hugo-material-docs"
+metadataformat = "yaml"
+canonifyurls = true
+# Enable Google Analytics by entering your tracking id
+googleAnalytics = "UA-1173427-1"
+
+[params]
+	# General information
+	author = "BarD Software"
+	description = "GanttProject Docs"
+	copyright = "Copyright (C) BarD Software s.r.o. Released under CC BY-SA license"
+
+	version = "2.8.2"
+	logo = "/img/ganttproject_128.png"
+	favicon = ""
+
+	permalink = "#"
+
+	# Custom assets
+	custom_css = []
+	custom_js  = []
+
+	# Syntax highlighting theme
+	highlight_css  = ""
+
+[params.palette]
+	primary = "teal"
+	accent  = "deep-orange"
+
+[params.font]
+	text = "Ubuntu"
+	code = "Ubuntu Mono"
+
+[social]
+	twitter = "ganttproject"
+	github  = "bardsoftware/ganttproject"
+
+[[menu.main]]
+  identifier = "releases"
+	name   = "Releases"
+	url    = "releases/"
+	weight = 10
+
+[[menu.main]]
+  identifier = "user"
+	name   = "User Docs"
+	url    = "user/"
+	weight = 10
+
+[[menu.main]]
+	name   = "Developer Docs"
+	url    = "development/"
+	weight = 20
+
+[blackfriday]
+	smartypants	= true
+	fractions = true
+	smartDashes = true
+	plainIDAnchors = true

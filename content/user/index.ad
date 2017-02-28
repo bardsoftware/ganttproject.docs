@@ -1,0 +1,9 @@
++++
+title = "User Docs"
+subtitle = "foo"
+weight = 20
++++
+
+## Scheduler
+
+The life of link:scheduler[project scheduler] in GanttProject.
