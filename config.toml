@@ -13,7 +13,7 @@ googleAnalytics = "UA-1173427-1"
 	description = "GanttProject Docs"
 	copyright = "Copyright (C) BarD Software s.r.o. Released under CC BY-SA license"
 
-	version = "2.8.2"
+	version = "2.8.3"
 	logo = "/img/ganttproject_128.png"
 	favicon = ""
 
