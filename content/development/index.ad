@@ -43,14 +43,15 @@ There is a branch in the Git repository for each release series, named ``BRANCH_
 For instance, the branch of 2.8 release series is called ``BRANCH_2_8_X``. Bugfixes
 should be merged to the release series branch first and to ``master`` afterwards.
 
-Contributors will normally want to fork from ``master`` and merge their work to ``master``
-unless they really do safe bugfixes.
+Unless specified otherwise in the design document,
+contributors will normally want to fork from ``master`` and merge their work to ``master``.
 
 ## Change Process
 
 In order to make a change and integrate it into GanttProject build you need to follow
 the change process. In short, you need to make our own fork of our repository on GitHub,
-create a branch forked from ``master``, hack, test, commit, push, create a pull request and pass
+create a branch forked from ``master`` (unless other branch is specified in Design Docs),
+hack, test, commit, push, create a pull request and pass
 code review. Text below gives more details on these steps.
 
 > *TL;DR*: Create branch per feature, follow the style, write tests, publish small pull requests early rather than later
@@ -72,16 +73,19 @@ Tab and get shell completions after typing ``git checkout``). Example name: ``tk
 > The most important rule: publish early and keep changes small. See Code Review section below.
 
 Hack, hack, hack. Please follow Java code style when hacking.
-https://google.github.io/styleguide/javaguide.html[Google Java Style Guide] is mostly ok.
-The most important points are:
+https://google.github.io/styleguide/javaguide.html[Google Java Style Guide] is mostly ok,
+with some important changes:
 
+* Add copyright header and license notice in the new files (see below)
 * Indent with spaces, not tabs
 * Block indent is 2 spaces, line wrapping is 4 spaces
 * K&R parentheses style
+* member variables in classes should be prefixed with prefix ``my``. Static objects which are mutable per se should
+be prefixed with ``our``. The purpose of prefix ``my`` is to be able to distinguish member and local variables
+without IDE assistance. Please do not use ``this.`` prefix with ``my``. Please do not
+use prefix ``my`` in the names of local variables and function arguments.
 
-One important convention in addition to Google's style guide: member variables in classes
-should be prefixed with prefix ``my``. Static objects which are mutable per se should
-be prefixed with ``our``:
+The following snippet follows our code style:
 
 [source,java]
 ----
@@ -94,10 +98,20 @@ public class Singleton {
   Singleton() {
     myValue = Singleton.DEFAULT_VALUE;
   }
+
+  public void setValue(int value) {
+    myValue = value;
+  }
+
+  public void getValueMultipliedByTheFirstArgumentAndAddedToTheSecond(
+      int multiplier, int increment) {
+    return myValue * multiplier + increment;
+  }
 }
 ----
 
-### Test
+
+### Testing
 
 We write unit tests whenever it makes sense. Unfortunately by far not the whole
 code base is covered. There is a module ``ganttproject-tester`` with
@@ -109,7 +123,7 @@ If your new code is not purely UI, it normally should come with tests.
 We hope you know how to commit and push. Refer to https://www.atlassian.com/git/tutorials/saving-changes[Atlassian tutorials]
  if you're absolutely new to Git. When you committed and pushed the changes,
 https://help.github.com/articles/about-pull-requests/[create a pull request in GitHub] against
-the chosen base branch (normally ``master``) from ``bardsoftware/ganttproject`` repo.
+the chosen base branch from ``bardsoftware/ganttproject`` repo.
 
 ### Code Review
 Your code must be reviewed before it is merged into the main code base. The purpose
@@ -134,5 +148,37 @@ be reading the code in the future.
 
 > Always code as if the person who ends up maintaining your code is a violent psychopath who knows where you live. -- John F.Woods
 
+Usually narrative comments (with optional word _Please_) say that reviewer thinks
+that code must be changed. Interrogative comments, with optional _Maybe_ express
+reviewer's opinion which you can argue if you have reasons to.
+
+
 When the reviewer is satisfied with your code, you'll get approve and https://en.wiktionary.org/wiki/LGTM[LGTM]. After that
 we'll merge your pull request into the main code base.
+
+## Copyright and license
+
+By contributing you agree with link:contribution[contribution terms]. If you create
+new files, please put the following snippet into the header:
+
+[source,java]
+----
+/*
+Copyright 2017 YOUR_REAL_NAME_HERE, BarD Software s.r.o
+
+This file is part of GanttProject, an opensource project management tool.
+
+GanttProject is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+GanttProject is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GanttProject.  If not, see <http://www.gnu.org/licenses/>.
+*/
+----
