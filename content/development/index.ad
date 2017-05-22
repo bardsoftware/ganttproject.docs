@@ -5,7 +5,10 @@ weight = 20
 
 ## Building GanttProject
 
-How to link:build[check out, compile and run GanttProject] using command line tools and IDEs.
+Build process is slightly different for stable GanttProject Pilsen and work-in-progress GanttProject Master. 
+
+* How to link:build-pilsen[check out, compile and run GanttProject 2.8] using command line tools and IDEs.
+* How to link:build[check out, compile and run GanttProject Master] using command line tools and IDEs.
 
 ## Base branch for pull requests
 
