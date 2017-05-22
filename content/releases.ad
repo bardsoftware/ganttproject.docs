@@ -24,6 +24,7 @@ It makes working link:/scheduler[Early Begin constraint]  in the scheduler and f
 |Feb 21, 2017 |https://github.com/bardsoftware/ganttproject/releases/tag/ganttproject-2.8.2[GanttProject 2.8.2]
 |Mar 6, 2017 |https://github.com/bardsoftware/ganttproject/releases/tag/ganttproject-2.8.3[GanttProject 2.8.3]
 |Mar 24, 2017 |https://github.com/bardsoftware/ganttproject/releases/tag/ganttproject-2.8.4[GanttProject 2.8.4]
+|May 19, 2017 |https://github.com/bardsoftware/ganttproject/releases/tag/ganttproject-2.8.5[GanttProject 2.8.5]
 |===
 
 ## Headlines
@@ -65,6 +66,8 @@ and other translations have also been updated.
 Distribution for Ubuntu and other Debian-based Linux systems which registers MIME type and file associations have changed
 MIME type from ``application/ganttproject+xml`` to ``application/x-ganttproject``. The latter apparently already comes by default with
 Ubuntu so no reason to use the former anymore.
+
+Maintenance updates fixed most of High-DPI compatibility issues and added a new feature: http://ganttproject.blogspot.com/2017/05/ganttproject-285-task-sorting.html[sorting of tasks by begin/end dates]
 
 ## Compatibility
 
