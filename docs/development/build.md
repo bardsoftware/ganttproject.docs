@@ -14,7 +14,7 @@ is not trivial, so be prepared to have some fun with setting up the things.
 A bare minimum which you need is:
 
 1. [Java SE Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (JDK)
-version 8 from Oracle or http://openjdk.java.net[OpenJDK]. Later versions of JDK may or may not work for you. There
+version 8 from Oracle or [OpenJDK](http://openjdk.java.net). Later versions of JDK may or may not work for you. There
 were major changes in JDK packaging, and we did not test the build process with the latest JDK.
 2. [JavaFX  libraries](http://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm). JavaFX is
 bundled with Oracle's JDK 8, but if you're using OpenJDK then you need to install JavaFX separately. It is
