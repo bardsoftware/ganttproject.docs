@@ -1,0 +1,34 @@
+site_name: 'GanttProject Docs'
+site_description: 'Assorted bits of GanttProject Documentation'
+site_author: 'BarD Software s.r.o'
+site_url: 'http://docs.ganttproject.biz'
+
+theme:
+  name: 'material'
+  palette:
+    primary: '#616161'
+    accent: orange
+    
+copyright: 'Copyright &copy; 2018 - 2019 BarD Software s.r.o'
+
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/bardsoftware/ganttproject'
+    - type: 'twitter'
+      link: 'https://twitter.com/ganttproject'
+    - type: 'facebook'
+      link: 'https://facebook.com/ganttproject'
+
+# Google Analytics
+google_analytics:
+  - 'UA-1173427-1'
+  - 'auto'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
