@@ -1,9 +1,0 @@
-[source,java]
-----
-class Foo {
-    int myBar;
-    Foo(int myBar) {
-        this.myBar = myBar;
-    }
-}
-----
