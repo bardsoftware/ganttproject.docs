@@ -2,7 +2,7 @@ Title: GanttProject Scheduler Explained
 
 # GanttProject Scheduler
 
-!!! note "TL;DR"
+!!! note "Summary"
     This article explains various bits of task scheduling in GanttProject which may (or may not)
     affect task start dates.
 
