@@ -4,7 +4,7 @@ The instructions assume that you're using Ubuntu-based Linux distribution.
 The process on other distros and Windows/Mac OSX should be similar,
 modulo differences in packages/paths and the way command line terminal works.
 
-## Overview of the technologies and frameworks used in the build process
+## Overview of the build technologies and frameworks
 
 GanttProject build process uses Java, Kotlin and Google Protocol Buffers compilers. Orchestrating them
 is not trivial, so be prepared to have some fun with setting up the things.
@@ -14,16 +14,11 @@ is not trivial, so be prepared to have some fun with setting up the things.
 A bare minimum which you need is:
 
 1. [Java SE Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (JDK)
-version 8 from Oracle or [OpenJDK](http://openjdk.java.net). Later versions of JDK may or may not work for you. There
-were major changes in JDK packaging, and we did not test the build process with the latest JDK.
-2. [JavaFX  libraries](http://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm). JavaFX is
-bundled with Oracle's JDK 8, but if you're using OpenJDK then you need to install JavaFX separately. It is
-available as `openjfx` in Ubuntu repositories.
-3. [Gradle](http://gradle.org) build tool for most of the development tasks.
-If you're going to build DEB package or Mac OSX app you'll also need [ANT](http://ant.apache.org).
-4. [Git](https://git-scm.com) version control to checkout the sources.
+version 11 from Oracle or [OpenJDK](http://openjdk.java.net). JDK builds from other vendors, such as Amazon or AdoptOpenJdk may also work fine.
+2. [Git](https://git-scm.com) version control to checkout the sources.
+3. Optionally you may install [Gradle](http://gradle.org) build tool. If you don't have Gradle, it will be downloaded automatically when running `gradlew` scripts.
 
-Please make sure that you can run ``java``, ``javac``, ``git`` and ``gradle`` commands.
+Please make sure that you can run ``java``, ``javac`` and ``git`` commands.
 
 ## Checking out the sources
 
@@ -34,24 +29,11 @@ You can clone the repository using
     git clone https://github.com/bardsoftware/ganttproject.git
 ```
 
-We also publish self-sufficient archives with the sources of the stable versions.
-The latest published is [GanttProject 2.8.9](https://github.com/bardsoftware/ganttproject/archive/ganttproject-2.8.9.zip)
-
 The rest of this page assumes that you checked out the sources using one of the ways into `/tmp/ganttproject` directory.
 
 ## Branches
 
 This document assumes that you work with `master` branch or with your own branch forked from `master`
-
-## Downloading the required libraries
-
-Before building you need to download some required libraries and frameworks. Run the following command to fetch them  from
-Maven  repositories:
-
-```
-    cd /tmp/ganttproject/ganttproject-builder
-    gradle updateLibs
-```
 
 ## Building with Gradle
 
@@ -59,8 +41,8 @@ If everything is OK with your environment then the following will build
 a binary distribution of GanttProject:
 
 ```
-    cd /tmp/ganttproject/ganttproject-builder
-    gradle updateLibs distBin
+    cd /tmp/ganttproject/
+    ./gradlew distbin
 ```
 
 The distribution is assembled in  `ganttproject-builder/dist-bin` directory. You can
@@ -71,8 +53,10 @@ run GanttProject using `ganttproject` or `ganttproject.bat` script:
     ./ganttproject
 ```
 
-You can also start GanttProject using `gradle runApp` which will build a distro and launch
+You can also start GanttProject using `./gradlew runApp` which will build a distro and launch
 GanttProject as necessary.
+
+If you don't need a ready-to-use distro, you can run `./gradlew build` which will build code and run tests.
 
 Basically, that's everything that you need to be able to change the sources using any text editor,
  build and run the changed code.
@@ -86,13 +70,16 @@ but other popular IDEs can also be used in a similar way.
 
 IDEA [supports Gradle](https://www.jetbrains.com/help/idea/2016.3/gradle.html) out of the box.
 You can just import GanttProject with `File.New.Project from Existing Sources` menu action in IDEA
-where you need to choose `ganttproject-builder/build.gradle` file. When asked about the modules,
-uncheck module `..` as shown on the screenshot below
+where you need to choose `build.gradle` file from the repository root. 
 
 ![Screenshot](/img/development/idea-gradle-import.png)
 
+You may want to check `Use auto-import` and uncheck `Create separate module per source set` options. Make sure that you use Java 11. You may use local Gradle distro if you have one.
+
+![Screenshot](/img/development/idea-gradle-import-settings.png)
+
 Having completed the import, you can run GanttProject using Gradle's runApp task. Open Gradle
-pane in IDEA, find task `runApp` in `ganttproject-builder/build.gradle` file,
+pane in IDEA, find task `runApp` in `ganttproject/build.gradle` file,
 right-click and choose `Run` or `Debug`.
 
 ![Screenshot](/img/development/idea-run-ganttproject.png)
