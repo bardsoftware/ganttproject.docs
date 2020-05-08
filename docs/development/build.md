@@ -35,6 +35,15 @@ The rest of this page assumes that you checked out the sources using one of the 
 
 This document assumes that you work with `master` branch or with your own branch forked from `master`
 
+## Submodules
+
+This repository has some submodules that we need to pull:
+
+```
+    cd /tmp/ganttproject/
+    git submodule update --init
+```
+
 ## Building with Gradle
 
 If everything is OK with your environment then the following will build
