@@ -1,6 +1,3 @@
-This history starts from GanttProject 2.8.
-You can find [previous history](http://www.ganttproject.biz/about) on the main web site.
-
 ## GanttProject 2.8 Pilsen
 
 GanttProject 2.8 "Pilsen" is an evolution of the previous [GanttProject 2.7 "Ostrava"](http://ganttproject.biz/ostrava).
@@ -45,7 +42,7 @@ may be affected. When opening older projects GanttProject audits the first run o
 reports the results to user if at least one task changes its dates after the first run. Scheduler Report
 looks as follows:
 
-![Screenshot](img/release_2.8/scheduler_report.png)
+![Screenshot](../img/release_2.8/scheduler_report.png)
 
 If your project is fine and the scheduler has made no changes, you'll see no report. Otherwise the report shows up
 a couple of seconds after file has been opened and you need to inspect the changes made by the scheduler.

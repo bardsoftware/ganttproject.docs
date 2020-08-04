@@ -8,46 +8,18 @@ Build process is slightly different for stable GanttProject Pilsen and work-in-p
 ## Base branch for pull requests
 
 Short answer: send pull requests against `master`. Longer answer depends on the
-change purpose. This section explains our versioning policy and relationships between versions and branches
-in the repository.
+change purpose. 
 
-### Versioning policy
+Bugfixes to some particular minor version shall be targeted to version branches. For GanttProject 2.8.11 
+version branch is `BRANCH_2_8_X`. Bugfixes should be merged to the version branch first and to ``master`` afterwards.
 
-GanttProject uses versioning scheme close to [semantic versioning](http://semver.org).
-GanttProject release numbers look like `MAJOR.MINOR.BUGFIX`. The policy of
-updating release number components is as follows:
-
-* We increment `BUGFIX` when we publish a new version with bugfixes which do not break
-file compatibility. Files produced by version ``V.v.N`` should be absolutely compatible
-with files produced by any version ``V.v.K`` for any ``K<>N``. As a rule of thumb, the decision
-to upgrade to newer bugfix release should be a no-brainer for the user because it can only
-make his experience better. Also bugfix release normally requires no changes in the translations.
-* We increment ``MINOR`` component when we add new features which may break file compatibility
-or require translation efforts. The new features may in fact be pretty big, though. Normally
-we require compatibility with the previous versions file-wise and aim at partial backward
-compatibility. That is, version ``V.N`` should be able to read files produced by version ``V.K``
-for ``K<N``, and it is desired that version ``V.K`` should be able to read files
-produced by version ``V.N`` without failures but probably with restricted functionality and
-with a chance to lose some data if file is overwritten.
-* We almost never increment ``MAJOR`` component. In fact, there was only one major version bump
-in GanttProject history. Major version increment should designate some new era in the
-GanttProject life and makes no guarantees with respect to file-wise compatibility (although
-we still will aim at forward compatibility).
-
-### Relationship to branches
-
-Bugfixes to some particular minor version are committed to verson branches. For GanttProject 2.8.9 
-version branch is `BRANCH_2_8_9`. Bugfixes
-should be merged to the version branch first and to ``master`` afterwards.
-
-Unless specified otherwise in the design document,
-contributors will normally want to fork from ``master`` and merge their work to ``master``.
+New features normally shall be targeted to ``master`` branch.
 
 ## Change Process
 
 In order to make a change and integrate it into GanttProject build you need to follow
 the change process. In short, you need to make your own fork of our repository on GitHub,
-create a branch forked from ``master`` (unless other branch is specified in Design Docs),
+create a branch forked from ``master`` (unless there is a good reason to choose some other branch),
 hack, test, commit, push, create a pull request and pass
 code review. Text below gives more details on these steps.
 
@@ -160,7 +132,7 @@ new files, please put the following snippet into the header:
 
 ```java
 /*
-Copyright 2018 YOUR_REAL_NAME_HERE, BarD Software s.r.o
+Copyright 2020 YOUR_REAL_NAME_HERE, BarD Software s.r.o
 
 This file is part of GanttProject, an opensource project management tool.
 

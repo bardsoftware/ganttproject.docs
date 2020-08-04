@@ -8,16 +8,20 @@ theme:
   palette:
     primary: '#616161'
     accent: orange
-    
-copyright: 'Copyright &copy; 2018 - 2019 BarD Software s.r.o'
 
+copyright: 'Copyright &copy; 2018 - 2020 BarD Software s.r.o'
+
+nav:
+  - 'For End Users': 'user/index.md'
+  - 'For Developers': 'development/index.md'
+  - Releases: 'releases/index.md'
 extra:
   social:
-    - type: 'github'
+    - icon: 'fontawesome/brands/github'
       link: 'https://github.com/bardsoftware/ganttproject'
-    - type: 'twitter'
+    - icon: 'fontawesome/brands/twitter'
       link: 'https://twitter.com/ganttproject'
-    - type: 'facebook'
+    - icon: 'fontawesome/brands/facebook'
       link: 'https://facebook.com/ganttproject'
 
 # Google Analytics

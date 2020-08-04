@@ -1,4 +1,4 @@
-This page provides instruction for building GanttProject from the master branch.
+This page provides instruction for building GanttProject from the `master` branch.
 
 The instructions assume that you're using Ubuntu-based Linux distribution.
 The process on other distros and Windows/Mac OSX should be similar,
@@ -14,8 +14,12 @@ is not trivial, so be prepared to have some fun with setting up the things.
 A bare minimum which you need is:
 
 1. [Java SE Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (JDK)
-version 11 from Oracle or [OpenJDK](http://openjdk.java.net). JDK builds from other vendors, such as Amazon or AdoptOpenJdk may also work fine.
-2. [Git](https://git-scm.com) version control to checkout the sources.
+version 11 with JavaFX modules. There are many JDK vendors and usually they ship JDK with no JavaFX modules. There are 
+two vendors who provide packages with JavaFX included: [BellSoft Liberica](https://bell-sw.com/pages/downloads/#/java-11-lts) 
+and [Azul Zulu](https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk-fx). You can install and 
+manage Java Runtimes on your machine using a very convenient tool [SDKMAN!](https://sdkman.io) which runs on Ubuntu/macOS 
+out of the box. On Windows, you can run SDKMan! in a Git shell from [GitHub Desktop](https://desktop.github.com/).
+2. [Git](https://git-scm.com) version control to checkout the sources. 
 3. Optionally you may install [Gradle](http://gradle.org) build tool. If you don't have Gradle, it will be downloaded automatically when running `gradlew` scripts.
 
 Please make sure that you can run ``java``, ``javac`` and ``git`` commands.
