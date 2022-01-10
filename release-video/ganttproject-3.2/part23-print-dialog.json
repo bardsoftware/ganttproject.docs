@@ -1,0 +1,14 @@
+{
+  "audioConfig": {
+    "audioEncoding": "LINEAR16",
+    "pitch": 0.5,
+    "speakingRate": 0.9
+  },
+  "input": {
+    "ssml": "<speak><break time='2000ms'/>Go!<break time='1000ms'/>Print dialog in GanttProject 3 dot 2 makes it easier. Just click the “Export pages as ZIP” button, and all the pages will be packed into a ZIP archive, one image file per page.</speak>"
+  },
+  "voice": {
+    "languageCode": "en-US",
+    "name": "en-US-Wavenet-I"
+  }
+}

@@ -1,0 +1,18 @@
+audioConfig:
+  audioEncoding: LINEAR16
+  pitch: 2.0
+  speakingRate: 0.85
+input:
+  ssml: >
+    <speak><break time='2000ms'/>Go!<break time='1000ms'/>
+    Finally, if you like automation, you can convert a project document to PDF or image 
+    using command-line export. It was unintentionally broken in GanttProject versions 3 dot 0 and 3 dot 1, 
+    but now it is great again! Let’s try to export our project as a PNG image. 
+    Okay, it worked fine, but GanttProject’s command-line is not limited to such 
+    simple operations. What about exporting a GanttProject document to CSV <break time='1s'/> or 
+    Microsoft Project format? Here we go! Can it convert MS Project files to images? 
+    Yes, <break time='50ms'/>it can.
+    </speak>
+voice:
+  languageCode: en-US
+  name: en-US-Wavenet-J

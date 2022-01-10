@@ -1,0 +1,14 @@
+{
+  "audioConfig": {
+    "audioEncoding": "LINEAR16",
+    "pitch": 0.5,
+    "speakingRate": 0.9
+  },
+  "input": {
+    "ssml": "<speak><break time='2000ms'/>Go!<break time='1000ms'/>Printing is a fragile thing, and there are hundreds of reasons why it may fail. In case if printing won't work properly in GanttProject, we usually recommend exporting a chart as an image or PDF and then printing the output, using third-party tools. The challenging moment for many people is how to tile a big chart to print every tile on ordinary <say-as interpret-as='characters'>A4</say-as> paper.</speak>"
+  },
+  "voice": {
+    "languageCode": "en-US",
+    "name": "en-US-Wavenet-I"
+  }
+}

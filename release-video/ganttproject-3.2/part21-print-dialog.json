@@ -1,0 +1,14 @@
+{
+  "audioConfig": {
+    "audioEncoding": "LINEAR16",
+    "pitch": 0.5,
+    "speakingRate": 0.9
+  },
+  "input": {
+    "ssml": "<speak><break time='2000ms'/>Go!<break time='1000ms'/>Okay, what if we want to <emphasis level=\"strong\">print</emphasis> <emphasis level=\"none\">the chart</emphasis>? The modernized Print Dialog is the second major feature update. It’s visual interface looks better,<break time='2000ms'/> than it used to be in the previous versions, and is better organized. The page settings are now persistent, and you don’t need to change the page size or orientation every time you open the dialog.</speak>"
+  },
+  "voice": {
+    "languageCode": "en-US",
+    "name": "en-US-Wavenet-I"
+  }
+}

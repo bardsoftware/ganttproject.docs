@@ -1,0 +1,17 @@
+audioConfig:
+  audioEncoding: LINEAR16
+  pitch: 2.0
+  speakingRate: 0.85
+input:
+  ssml: >
+    <speak><break time='2000ms'/>Go!<break time='1000ms'/>
+    GanttProject is free open-source software. You can use it free of charge
+    for any purpose. If you want to support GanttProject development, 
+    choose a paid download option and name your fair price. 
+    We also welcome you to subscribe to GanttProject Cloud, 
+    a low-cost cloud service that extends GanttProject with centralized 
+    project storage and collaboration capabilities.
+    </speak>
+voice:
+  languageCode: en-US
+  name: en-US-Wavenet-H
