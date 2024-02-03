@@ -11,7 +11,8 @@ or start a new discussion.
 * [GanttProject Scheduler Explained](./scheduler)
   
     This article explains various bits of task scheduling in GanttProject which may (or may not) affect task start dates.
-    
+
+* [Calculated Columns](./calculated-columns)    
 * [Troubleshooting MS Project Import](./troubleshooting-msproject-import)
   
     This article describes possible reasons of task dates change after import from MS Project file.
